@@ -34,6 +34,12 @@ Scan through our existing issues to find one that interests you. You can narrow 
 
 Rest of the rules... I don't fucking know, just check out our code or something 🤣
 
+## Directory style
+
+- You can use any case for your directory names, e.g. you can put your config files inside configs, Configs, CONFIGS or ConFIgS.
+- Always provide default configuration files in `Configs` directory.
+- Put all documentation files into `Docs`.
+
 ## Pull Request
 
 When you're finished with the changes, create a pull request, also known as a PR.
