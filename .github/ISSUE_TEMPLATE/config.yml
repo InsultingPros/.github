@@ -1,8 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Github Discussions
-    url: https://github.com/orgs/InsultingPros/discussions
-    about: Please ask and answer questions here.
   - name: Discord
     url: https://discord.gg/eREYb3AgeT
     about: Or join to our server if you prefer discord.
