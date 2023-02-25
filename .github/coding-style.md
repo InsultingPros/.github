@@ -261,7 +261,7 @@ public function float MyFunc(int arg1, bool arg2) {
 }
 ```
 
-## Summary sentence
+### Summary sentence
 
 In API documentation, the first line should be a single-line short sentence providing
 a summary of the code and should be kept short.
@@ -272,7 +272,7 @@ Basically, this means write ‘Returns’ instead of ‘Return’.
 It should be separated from the rest of the documentation by an empty comment line:
 simply `///` or `//!`.
 
-## Using Markdown
+### Using Markdown
 
 Within documentation comments, use Markdown to format your documentation.
 
@@ -290,7 +290,7 @@ Use backticks (`) to denote a code fragment within a sentence.
 Use triple backticks (```) to write longer examples.
 You don't need to specify UnrealScript as a language for triple backticks.
 
-## Referring to types
+### Referring to types
 
 To refer to a type, field or enum variant use combination of square brackets and backticks:
 
