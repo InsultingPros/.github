@@ -208,7 +208,8 @@ Avoid `--` or `++` operators and use `+=` and `-=` instead.
 
 ### Files and directories
 
-* Content of the files should be limited to ASCII, allowing use of any compatible encoding.
+* Content of the files should be encoded in any one-byte encoding compatible with ASCII,
+    while only using ASCII characters.
     In rare circumstances (when one needs to define `string` with non-ASCII characters)
     one can use UTF-16 BE;
 * Top level structure of the project should consist of:
