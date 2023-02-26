@@ -99,8 +99,8 @@ class MyCoolClass
     config(MyCoolConfig);
 
 struct MyStruct {
-    public int openField;
-    public string closedField;
+    var public int openField;
+    var private string closedField;
 };
 
 enum JustCoolEnum {
