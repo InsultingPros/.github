@@ -111,7 +111,7 @@ enum JustCoolEnum {
 
 protected abstract simulated function bool LongEnoughFunctionNameSoThatArgumentsDoNotFitIntoTheLine(
     int argument1,
-    int argument2
+    int argument2,
     int argument3
 ) {
     local bool booleanVariable;
