@@ -117,10 +117,10 @@ protected abstract simulated function bool LongEnoughFunctionNameSoThatArguments
     local bool booleanVariable;
     local int anotherVariable;
 
-    if (argument1 < 0)      return false;
+    if (argument1 < 0) return false;
     booleanVariable = (argument2 > 13);
-    if (booleanVariable)    return true;
-    if (argument3 == 7)     return true;
+    if (booleanVariable) return true;
+    if (argument3 == 7) return true;
 
     booleanVariable = (argument2 > 13);
     if (argument1 > 10) {
