@@ -90,7 +90,8 @@ Developed from Google Java style.
         braces, but all of the `return` instructions should be aligned on the same vertical level
         (equal to the minimal possible multiple of 4).
         They can also be interspersed with assignment instruction to variables, as long as resulting
-        values of said variables are immediately tested in the next `if` check.
+        values of said variables are immediately tested in the next `if` check;
+    3. The body of function with the main logic.
 
 ```unrealscript
 class MyCoolClass
