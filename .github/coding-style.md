@@ -272,6 +272,13 @@ Basically, this means write ‘Returns’ instead of ‘Return’.
 It should be separated from the rest of the documentation by an empty comment line:
 simply `///` or `//!`.
 
+### Rest of item's documentation
+
+Rest of documentation should describe the method as a whole, along with the meaning of
+its parameters and return value.
+This is in contrast to javadoc, where they have had their own descriptions specified via
+`@param` or `@return`, which in a lot of cases had to simply duplicate the rest of the description.
+
 ### Using Markdown
 
 Within documentation comments, use Markdown to format your documentation.
