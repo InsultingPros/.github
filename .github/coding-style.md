@@ -25,7 +25,7 @@ of the specialized tooling for that.
     `out`, etc;
 * `none`, `default`, `super`, `false`/`true` and all other keywords should be in lower case;
 * For casing, a “word” is anything written without internal spaces, including acronyms.
-    For example, `MyJSON` instead of ~~`MyRPC`~~;
+    For example, `MyJson` instead of ~~`MyJSON`~~;
 * Except for cycle counters such as `i`, `j` and `k`, always use meaningful variable names -
     there is no need to be stingy with characters.
     But do try not to make names longer than 20 characters
@@ -56,7 +56,6 @@ Developed from Google Java style.
 
 * No trailing whitespaces are allowed;
 * A maximum of one statement per line;
-* A maximum of one assignment per statement;
 * Indentation of 4 spaces, no tabs;
 * Column limit: 100;
 * One empty line between functions;
@@ -181,16 +180,26 @@ This check can only be dropped in internal methods that will only be called by o
 within the same class and can guarantee that passed argument isn't `none`
 (for example if they've already performed the check).
 
-**NOTE** that execution of any code that doesn't come from your own code package might destroy
-`Actor` objects, so checks on them might need to be redone.
-If you have a reason to believe they won't - add a comment with an explanation why.
+> **Note**
+> Execution of any code that doesn't come from your own code package might destroy `Actor` objects,
+> so checks on them might need to be redone.
+> If you have a reason to believe they won't - add a comment with an explanation why.
 
 ### Returning values from functions
 
 * If function returns a value - it should be assigned to a variable, *especially* if that value
     is an `Object` or `struct`.
     Not following this rule might cause rare, but hard to debug bugs;
-* If you call a function with an `out` parameter - explicitly mark such parameter with /*out*/.
+* If you call a function with an `out` parameter - explicitly mark such parameter with
+    commented `out`:
+
+    ```unrealscript
+    function MyFunction(out int arg) {
+    /*...*/
+    }
+
+    MyFunction(/*out*/ value);
+    ```
 
 ### Increment/decrement operators
 
