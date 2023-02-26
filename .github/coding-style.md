@@ -34,7 +34,7 @@ of the specialized tooling for that.
 #### Organization
 
 Modifiers (for a single function/variable) occur in the following order:
-`public`, `protected`, `private`, `abstract`, `final`, `static`, `simulated`, `function`;
+`public`, `protected`, `private`, `final`, `static`, `simulated`, `function`;
 
 Class member ordering:
 
@@ -109,7 +109,11 @@ enum JustCoolEnum {
     JCE_WhateverThisIs
 };
 
-protected abstract simulated function bool LongEnoughFunctionNameSoThatArgumentsDoNotFitIntoTheLine(
+public function SimpleFunction(string arg1, Object arg2) {
+    return;
+}
+
+protected final simulated function bool LongEnoughFunctionNameSoThatArgumentsDoNotFitIntoTheLine(
     int argument1,
     int argument2,
     int argument3
