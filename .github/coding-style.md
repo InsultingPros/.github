@@ -18,6 +18,7 @@ of the specialized tooling for that.
 #### Code
 
 * Names of classes, methods, enumerations, public fields: `PascalCase`;
+* Constants' names: `UPPER_SNAKE_CASE`;
 * Filenames and directory names are `PascalCase`, e.g. `MyFile.uc`;
 * Names of local variables, parameters: `camelCase`;
 * Names of private, protected, internal and protected internal fields and properties: `_camelCase`;
@@ -34,17 +35,18 @@ of the specialized tooling for that.
 #### Organization
 
 Modifiers (for a single function/variable) occur in the following order:
-`public`, `protected`, `private`, `final`, `static`, `simulated`, `function`;
+`public`, `protected`, `private`, `final`, `static`, `localized`, `simulated`, `exec`, `function`;
 
 Class member ordering:
 
 * Group class members in the following order:
     1. `struct`s, `enum`s and `delegate`s;
     2. `static` and `const` fields;
-    3. Other fields;
-    4. If applicable, methods that can at least in some sense be thought of as constructors and
+    3. Variable declarations;
+    4. Replication block;
+    5. If applicable, methods that can at least in some sense be thought of as constructors and
         finalizers for the instances of the class.
-    5. Methods.
+    6. Methods.
 * Within each group, elements should be in the following order:
     1. Public.
     2. Protected.
@@ -59,9 +61,23 @@ Developed from Google Java style.
 * Indentation of 4 spaces, no tabs;
 * Column limit: 100;
 * One empty line between functions;
-* No line break before opening brace;
+* No line break before opening brace, has to have a break after (even for empty blocks);
 * No line break between closing brace and `else`;
 * Braces used even when optional;
+* `defaultproperies` should be formatted like all other blocks and appear in every file, even if
+    it is empty;
+* In the definitions of `defaultproperties` block `=` sign in variable assignment should be
+    surrounded by white spaces.
+    Several whitespaces to the left of `=` are allowed to group several assignments at
+    the same ident level;
+    Note that when assigning a default value of a struct, there's no spaces allowed inside value's
+    definition: `def = (a="Hello, world!",b=false)`;
+* In `replication` block condition should be indented by 4 spaces, then all the replicated
+    variables/functions should be indented by 4 more spaces.
+    In case of having to specify them on several lines, no additional indentation is necessary.
+    Functions and variables should be grouped separately.
+* In `switch` blocks `case <label>:` must be indented by 4 whitespaces all following instructions
+    by 4 more whitespaces (to 8 total, relative to the `switch` definition);
 * Space after `if`/`for`/`while` etc., and after commas;
 * Inside `for` cycle's declaration put space after each semicolon;
 * No space after an opening parenthesis or before a closing parenthesis;
@@ -80,9 +96,9 @@ Developed from Google Java style.
     1. In general, line continuations are indented 4 additional spaces;
     2. For function definitions and calls, if the arguments do not all fit on one line they
         should be broken up onto multiple lines, with each argument on its own line, indented by
-        4 spaces.
+        4 spaces, closing brace should not be indented;
         In that case, there should be line breaks after opening parenthesis and before closing one.
-        The code example below illustrates this;
+        The code example below illustrates this.
 * Any function's body can consist of three different parts that have to be separated by line breaks:
     1. `local` variable definitions;
     2. Set of guard checks - `if` block with a single `return` instruction.
@@ -109,6 +125,17 @@ enum JustCoolEnum {
     JCE_WhateverThisIs
 };
 
+var protected int globalValue;
+var protected localized string message;
+
+replication {
+    reliable if (role < ROLE_Authority)
+        globalValue;
+    //  Functions are grouped separately
+    reliable if (role < ROLE_Authority)
+        LongEnoughFunctionNameSoThatArgumentsDoNotFitIntoTheLine;
+}
+
 public function SimpleFunction(string arg1, Object arg2) {
     return;
 }
@@ -127,6 +154,16 @@ protected final simulated function bool LongEnoughFunctionNameSoThatArgumentsDoN
     if (argument3 == 7)     return true;
 
     booleanVariable = (argument2 > 13);
+    switch (argument2) {
+        case 5:
+            argument2 += 7;
+            break;
+        case 9:
+            argument3 = 0;
+            break;
+        default:
+            argument2 -= 3;
+    }
     if (argument1 > 10) {
         return (argument1 + argument2 * argument3) > 12;
     }
@@ -139,6 +176,11 @@ protected final simulated function bool LongEnoughFunctionNameSoThatArgumentsDoN
             return anotherVariable * 10;
         }
     }
+}
+
+defaultproperties {
+    globalValue = 29
+    message     = "Just a message"
 }
 ```
 
@@ -247,10 +289,15 @@ Class comments are special and should come right after its declaration in the se
 line comments that start with `//!`.
 
 Somewhat unrelated, but copyright and license info should be specified in the
-`/** */` block comment, where each line starts with ` *`:
+`/** */` block comment, where each line starts with ` *`.
+Each line in that block should start with declaring what is being specified, followed by the colon
+with a whitespace and then corresponding value:
 
 ```unrealscript
 /**
+ * Author: some guy
+ * Home repo: https://go.fuck.yourself/
+ * License: GPL
  * Copyright 2022-2023 Some guy
  *------------------------------------------------------------------------------
  * Optional license info: GPL, MIT, whatever.
