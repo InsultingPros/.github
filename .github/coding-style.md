@@ -166,13 +166,11 @@ protected final simulated function bool LongEnoughFunctionNameSoThatArgumentsDoN
     }
     if (argument1 > 10) {
         return (argument1 + argument2 * argument3) > 12;
-    }
-    else {
+    } else {
         anotherVariable = argument1 * argument2 - argument3;
         if (booleanVariable) {
             return anotherVariable;
-        }
-        else {
+        } else {
             return anotherVariable * 10;
         }
     }
