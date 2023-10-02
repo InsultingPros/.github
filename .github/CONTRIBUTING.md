@@ -18,27 +18,25 @@ Scan through our existing issues to find one that interests you. You can narrow 
 <!-- Some Python sauce applied: <https://peps.python.org/pep-0008/> -->
 ## Coding style
 
-- File Encoding: UTF8, but in rare conditions we want it in `UTF-16 BE` and mention that on file header comment.
-- Indentation: use 4 spaces per indentation level. Even if you find an old piece of code that uses x2 spaces, override it.
-- Use camel case - variable names start with lower case letter and class (object / actor) names with upper case: `local Object objectVariable`.
-- `none`, `default`, `super`, `false / true` and all other special words: in lower case.
-- `int`, `float`, `byte`, `bool`, `string` variables: lower case.
-- 2 blank lines between functions.
-- 1 blank line after variable declaration.
-- Add a space between function call / conditions / statements and parentheses:`while (bBool)`.
-- Don't put spaces:
-  - Immediately after parentheses, brackets or braces: `FunctionCall(arg1, arg2)`.
-  - Immediately before a comma, semicolon, or colon.
-  - More than one space around an assignment (or other) operator to align it with another: `n = 3`.
-- Avoid trailing whitespace anywhere.
+**UnrealScript**:
 
-Rest of the rules... I don't fucking know, just check out our code or something 🤣
+- Check this [document](coding-style.md).
+
+**Python**:
+
+- Stick to [PEP 8](https://peps.python.org/pep-0008/).
+- [Type hints](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html) are a must.
+
+**Rust**:
+
+- Clippy's [`pedantic`](https://rust-lang.github.io/rust-clippy/master/index.html#?versions=eq:29,lte:30,gte:29&groups=pedantic) ruleset.
+- Code should not have any active or supressed warnings.
 
 ## Directory style
 
 - You can use any case for your directory names, e.g. you can put your config files inside configs, Configs, CONFIGS or ConFIgS.
-- Always provide default configuration files in `Configs` directory.
-- Put all documentation files into `Docs`.
+- Always provide default configuration files in `configs` directory.
+- Put all documentation files into `docs`.
 
 ## Pull Request
 
@@ -50,7 +48,7 @@ When you're finished with the changes, create a pull request, also known as a PR
 - We may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes in your fork, then commit them to your branch.
 - As you update your PR and apply changes, mark each conversation as resolved.
 
-## Your PR is merged!
+## Your PR is merged
 
 Congratulations 🎉 We thank you ✨.
 

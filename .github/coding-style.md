@@ -1,5 +1,7 @@
 # UnrealScript Insulting Players Style Guide
 
+> Go back to [CONTRIBUTING](CONTRIBUTING.md#coding-style)
+
 This guide is for any project developed by us.
 It is a result of trial and error, combined with ideas borrowed from some other languages.
 You might find a lot of code in our repos that do not follow this style, this is because this
@@ -287,7 +289,7 @@ Class comments are special and should come right after its declaration in the se
 line comments that start with `//!`.
 
 Somewhat unrelated, but copyright and license info should be specified in the
-`/** */` block comment, where each line starts with ` *`.
+`/** */` block comment, where each line starts with `*`.
 Each line in that block should start with declaring what is being specified, followed by the colon
 with a whitespace and then corresponding value:
 
