@@ -20,7 +20,7 @@ Scan through our existing issues to find one that interests you. You can narrow 
 
 **UnrealScript**:
 
-- Check this [document](coding-style.md).
+- Check this [document](https://github.com/InsultingPros/.github/blob/main/.github/coding-style.md).
 
 **Python**:
 

@@ -1,6 +1,6 @@
 # UnrealScript Insulting Players Style Guide
 
-> Go back to [CONTRIBUTING](CONTRIBUTING.md#coding-style)
+> Go back to [CONTRIBUTING](https://github.com/InsultingPros/.github/blob/main/.github/CONTRIBUTING.md)
 
 This guide is for any project developed by us.
 It is a result of trial and error, combined with ideas borrowed from some other languages.
