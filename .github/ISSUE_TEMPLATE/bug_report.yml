@@ -2,6 +2,8 @@ name: Bug Report
 description: File a bug report
 labels: ["bug", "triage"]
 title: "[Bug]: "
+assignees:
+  - Shtoyan
 body:
   - type: markdown
     attributes:
